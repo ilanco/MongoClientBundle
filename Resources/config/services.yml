@@ -1,0 +1,20 @@
+parameters:
+    mongo.connection.string: "mongodb://localhost:27017"
+    mongo.database.name: "test"
+    mongo.options.replicaSet:
+    mongo.profiling_level: 2
+
+services:
+    mongo.client:
+        class: MongoClient
+        arguments:
+            - %mongo.connection.string%
+            -
+                replicaSet: %mongo.options.replicaSet%
+                readPreference: "@=constant('\MongoClient::RP_SECONDARY_PREFERRED')"
+
+    mongo.database:
+        class: MongoDB
+        arguments:
+            - "@mongo.client"
+            - %mongo.database.name%

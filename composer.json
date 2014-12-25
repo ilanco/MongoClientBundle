@@ -1,0 +1,26 @@
+{
+    "name": "ilanco/mongoclient-bundle",
+    "type": "symfony-bundle",
+    "description": "This Bundle provides a MongoClient service for Symfony2",
+    "keywords": ["mongodb"],
+    "homepage": "https://github.com/ilanco/MongoClientBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ilan Cohen",
+            "email": "ilanco@gmail.com",
+            "homepage": "https://github.com/ilanco"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": "~2.2"
+    },
+    "require-dev": {
+        "sensio/framework-extra-bundle": "~2.2"
+    },
+    "autoload": {
+        "psr-0": { "IC\\MongoClientBundle": "" }
+    },
+    "target-dir": "IC/MongoClientBundle"
+}
